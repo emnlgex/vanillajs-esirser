@@ -1,0 +1,20 @@
+{
+  "name": "esi-parser",
+  "version": "0.0.1",
+  "description": "ESI parser using only vanilla JS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emnloc/vanillajs-esi-parser.git"
+  },
+  "keywords": [
+    "ESI",
+    "Parser"
+  ],
+  "author": "emmanuel.ortiz.dev@gmail.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/emnloc/vanillajs-esi-parser/issues"
+  },
+  "homepage": "https://github.com/emnloc/vanillajs-esi-parser#readme"
+}
