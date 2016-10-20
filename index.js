@@ -47,7 +47,7 @@ function do_esi_parsing( element ) {
         var children = include.childNodes;
         for (var j = children.length - 1; j >= 0 ; j--) {
             var child = include.removeChild(children[j]);
-            include.parentNode.insertBefore(child, include.parentNode.nextSibling);
+            include.parentNode.insertBefore(child, include.nextSibling);
 
         }
         esi_get_page(include,src);
