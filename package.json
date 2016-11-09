@@ -1,6 +1,6 @@
 {
   "name": "esi-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ESI parser using only vanilla JS",
   "main": "index.js",
   "repository": {
