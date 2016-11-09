@@ -23,7 +23,7 @@
  *
  */
 
-function do_esi_parsing( element ) {
+function do_esi_parsing( element, callback ) {
     if (element == document) {
         // if we are processing the document element, we have
         // to get the body and head elements contents and do our
@@ -50,7 +50,7 @@ function do_esi_parsing( element ) {
             include.parentNode.insertBefore(child, include.nextSibling);
 
         }
-        esi_get_page(include,src);
+        esi_get_page(include,src, callback);
     }
     var removes = esi_get_subelements_by_name(element, 'esi:remove');
     for (var k = removes.length -1; k >=0 ; k--) {
@@ -58,7 +58,7 @@ function do_esi_parsing( element ) {
     }
     return includes_total;
 }
-function esi_get_page(element,src) {
+function esi_get_page(element,src, callback) {
     var self = element;
 
     var xhr = new XMLHttpRequest();
@@ -87,6 +87,10 @@ function esi_get_page(element,src) {
                 self.parentNode.removeChild(self);
                 if (data.indexOf('esi:include') != -1) {
                     do_esi_parsing(parent);
+                }
+
+                if(typeof callback === "function") {
+                    callback();
                 }
 
 
